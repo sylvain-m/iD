@@ -26,6 +26,7 @@ export function uiFieldText(field, context) {
     var _entityIDs = [];
     var _tags;
     var _phoneFormats = {};
+    var formatFloat = localizer.floatFormatter(localizer.languageCode());
     var parseLocaleFloat = localizer.floatParser(localizer.languageCode());
 
     if (field.type === 'tel') {
@@ -126,7 +127,7 @@ export function uiFieldText(field, context) {
                         if (!isFinite(num)) return v;
                         num = parseFloat(num, 10);
                         if (!isFinite(num)) return v;
-                        return clamped(num + d).toLocaleString(localizer.languageCode());
+                        return formatFloat(clamped(num + d));
                     });
                     input.node().value = vals.join(';');
                     change()();
@@ -327,7 +328,7 @@ export function uiFieldText(field, context) {
                 v = v.trim();
                 var num = parseFloat(v, 10);
                 if (!isFinite(num)) return v;
-                return clamped(num).toLocaleString(localizer.languageCode());
+                return formatFloat(clamped(num));
             });
             val = vals.join(';');
         }
