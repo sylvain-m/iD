@@ -25,7 +25,7 @@ export function coreContext() {
   let context = utilRebind({}, dispatch, 'on');
   let _deferred = new Set();
 
-  context.version = '2.21.0-dev';
+  context.version = '2.22.0-dev';
   context.privacyVersion = '20201202';
 
   // iD will alter the hash so cache the parameters intended to setup the session
@@ -548,8 +548,8 @@ export function coreContext() {
 
       // kick off some async work
       localizer.ensureLoaded();
-      _background.ensureLoaded();
       presetManager.ensureLoaded();
+      _background.ensureLoaded();
 
       Object.values(services).forEach(service => {
         if (service && typeof service.init === 'function') {
@@ -574,6 +574,7 @@ export function coreContext() {
       if (!context.container().empty()) {
         _ui.ensureLoaded()
           .then(() => {
+            _background.init();
             _photos.init();
           });
       }

@@ -30,7 +30,7 @@ Come on in, the water's lovely. More help? Ping `Martin Raifer`/`tyr_asd` or `bh
 
 ## Prerequisites
 
-* [Node.js](https://nodejs.org/) version 12 or newer
+* [Node.js](https://nodejs.org/) version 16.14 or newer
 * [`git`](https://www.atlassian.com/git/tutorials/install-git/) for your platform
   * Note for Windows users:
     * Edit `$HOME\.gitconfig`:<br/>
@@ -67,7 +67,7 @@ If you want to add in the full history later on, perhaps to run `git blame` or `
 2. Run `npm install`
 3. Run `npm run all`
 3. Run `npm start`
-4. Open `http://localhost:8080/` in a web browser
+4. Open `http://127.0.0.1:8080/` in a web browser
 
 For guidance on building a packaged version, running tests, and contributing to
 development, see [CONTRIBUTING.md](CONTRIBUTING.md).
